@@ -28,6 +28,12 @@ Ajouts des entitées "ItemsForSale" et "Consumable";
   - Ajout base de données,
   (CRUB...).
   
+  #### Branch
+  
+  Master : Fonctionnel pour la partie log
+  Dev : Mise au propre des différents fichiers, modification liaison ManyToMany --> CRASH!!!
+  Dev 2 : Branche pour futur reprise...
+  
 ## L'histoire n'est pas terminé...
 
 
