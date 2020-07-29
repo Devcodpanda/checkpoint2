@@ -1,5 +1,5 @@
 # checkpoint2
-###checkpoint fin de session
+### checkpoint fin de session
 
 ## Sujet libre - Gestion des stocks perso
 
