@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Consumable Registration</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<form action="/consumable/register" method="post">
+    <input name="idConsumable" th:value="${consumable.id}" type="hidden">
+    <h1 th:text="|${consumable.name}|"></h1>
+    <label for="itemsForSale">Register a consumable:</label>
+    <select id="itemsForSale" name="idItemsForSale">
+        <option th:each="itemsForSale : ${allItemsForSales}" th:text="${itemsForSale.name}"
+                th:value="${itemsForSale.id}"> Nom du consommable
+        </option>
+    </select>
+    <input type="submit" value="Send">
+</form>
+<h3>Pièces en stock:</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="itemsForSale : ${consumable.itemsForSales}">
+        <td th:text="${itemsForSale.id}">id</td>
+        <td th:text="${itemsForSale.name}">name</td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<a href="/">Return to consumable list</a>
+</body>
+</html>

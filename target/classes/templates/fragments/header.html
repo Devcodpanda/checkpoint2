@@ -1,0 +1,25 @@
+<!-- Header -->
+<nav class="mb-auto masthead"
+     th:fragment="header"
+     xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                        aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="navbar-brand" href="#" th:href="@{/}">Panda Buyer - Stockage</a>
+                    <a class="nav-link active" th:href="@{/}">Home</a>
+                    <a class="nav-link" th:href="@{/login}">Sign In</a>
+                    <a class="nav-link" th:href="@{/logout}">Logout</a>
+                </nav>
+            </div>
+        </div>
+    </nav>
+
+</nav>
