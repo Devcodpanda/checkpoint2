@@ -4,7 +4,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Entity
 public class Consumable {
 
@@ -12,8 +11,6 @@ public class Consumable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String designation;
-    private Double price;
 
 
     @ManyToMany
@@ -22,7 +19,7 @@ public class Consumable {
             joinColumns = @JoinColumn(
                     name = "consumable_id"),
             inverseJoinColumns = @JoinColumn(
-                    name = "itemsForSale_id"))
+                    name = "consumable_id"))
 
     private List<ItemsForSale> itemsForSales = new ArrayList<>();
 
@@ -31,6 +28,10 @@ public class Consumable {
 
     public List<ItemsForSale> getItemsForSales() {
         return itemsForSales;
+    }
+
+    public void setItemsForSales(List<ItemsForSale> ItemsForSales) {
+        this.itemsForSales = itemsForSales;
     }
 
     public Long getId() {
@@ -49,19 +50,4 @@ public class Consumable {
         this.name = name;
     }
 
-    public String getDesignation() {
-        return designation;
-    }
-
-    public void setDesignation(String designation) {
-        this.designation = designation;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
 }

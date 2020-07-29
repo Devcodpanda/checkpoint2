@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pieces List</title>
+</head>
+<body>
+<h3>Pièces en vente :</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Price</th>
+
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="itemsForSale : ${itemsForSales}">
+        <td th:text="${itemsForSale.id}">id</td>
+        <td th:text="${itemsForSale.name}">first name</td>
+        <td th:text="${itemsForSale.designation}">last name</td>
+        <td th:text="${itemsForSale.price}">birthday</td>
+        <td><a th:href="@{/itemsForSale/register(idItemsForSale=${itemsForSale.id})}">Pièces</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

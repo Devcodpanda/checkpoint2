@@ -11,10 +11,9 @@
 
     <title>Registration</title>
 </head>
-<body>
+<body class="text-center">
 <!-- Navigation -->
 <div th:replace="fragments/header :: header">&nbsp;</div>
-
 
 
 <br>
@@ -25,15 +24,59 @@
     <p>
         Vous êtes connecté en tant que <span sec:authentication="principal.username">User</span>
     </p>
+    <br>
+    <br>
 
-    <div th:replace="fragments/footer :: footer"></div>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-</div>
+        <div class="inner cover">
 
-<script type="text/javascript"
-        th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
-<script type="text/javascript"
-        th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+            <form action="/consumable" method="get">
+                <div class="flex-column mt-5">
+                    <div class="row">
+                        <div class="col w-100">
+                            <button type="submit"
+                                    class="btn btn-success mb-3 w-100">Consommables
+                            </button>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit"
+                                    class="btn btn-success mb-3 w-100"
+                                    formaction="/itemsForSale">Pièces en vente
+                            </button>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit"
+                                    class="btn btn-success mb-3 mr-3"
+                                    formaction="/api/consumable">API Stock
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+        <br>
+        <br>
+        <div th:replace="fragments/footer :: footer"></div>
+
+    </div>
+
+    <script type="text/javascript"
+            th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+    <script type="text/javascript"
+            th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"
+            th:src="@{/js/bootstrap.bundle.min.js}"></script>
 
 </body>
 </html>

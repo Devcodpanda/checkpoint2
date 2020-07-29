@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 @Entity
 public class ItemsForSale {
 
@@ -11,6 +13,8 @@ public class ItemsForSale {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String designation;
+    private Double price;
 
 
     @ManyToMany(mappedBy = "itemsForSales")
@@ -21,14 +25,6 @@ public class ItemsForSale {
 
     public List<Consumable> getConsumables() {
         return consumables;
-    }
-
-    public void setConsumables(List<Consumable> consumables) {
-        this.consumables = consumables;
-    }
-
-    public ItemsForSale(String name) {
-        this.name = name;
     }
 
     public Long getId() {
@@ -46,6 +42,21 @@ public class ItemsForSale {
     public void setName(String name) {
         this.name = name;
     }
-}
 
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+}
 

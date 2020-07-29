@@ -2,28 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Wizard List</title>
+    <title>Consumables List</title>
 </head>
-<style>
-    table {
-        border-collapse: collapse;
-    }
-
-    th {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    th, td {
-        border-bottom: 1px solid #ddd;
-        padding: 10px 5px;
-        text-align: left;
-    }
-</style>
 <body>
 <h3>Consommables :</h3>
 <table>
@@ -31,19 +11,15 @@
     <tr>
         <th>Id</th>
         <th>Name</th>
-        <th>Designation</th>
-        <th>Price</th>
 
         <th></th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="consumable : ${wizards}">
-        <td th:text="${wizard.id}">id</td>
-        <td th:text="${wizard.firstName}">first name</td>
-        <td th:text="${wizard.lastName}">last name</td>
-        <td th:text="${wizard.birthday}">birthday</td>
-        <td><a th:href="@{/wizard/register(idWizard=${wizard.id})}">courses</a></td>
+    <tr th:each="consumable : ${consumables}">
+        <td th:text="${consumable.id}">id</td>
+        <td th:text="${consumable.name}">first name</td>
+        <td><a th:href="@{/consumable/register(idConsumable=${consumable.id})}">Consommables</a></td>
     </tr>
     </tbody>
 </table>
